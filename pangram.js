@@ -4,15 +4,19 @@
 //
 
 import { Stream } from "stream";
+import { stringify } from "querystring";
 
 export const isPangram = (str) => {
   let result = true; 
   let alphabet = "abcdefghijklmnopqrstuvwxyz";
+  let lc = str.toLowerCase()
+
   for (let i = 0; i < alphabet.length; i++){
-    if (str.indexOf(alphabet[i]) == -1) {
+    
+    if (lc.indexOf(alphabet[i]) == -1) {
       result = false;
     }
   }
-  
+
   return result; 
 };
